@@ -1,6 +1,7 @@
 import { Routes, Route } from 'react-router-dom';
 import SmoothScroll from "./components/SmoothScroll";
 import CustomCursor from "./components/CustomCursor";
+import ScrollToTop from "./components/ScrollToTop";
 import Navbar from "./components/Navbar";
 import Hero from "./components/Hero";
 import About from "./components/About";
@@ -32,6 +33,7 @@ function HomePage() {
 function App() {
   return (
     <SmoothScroll>
+      <ScrollToTop />
       <CustomCursor />
       <Navbar />
       <Routes>
