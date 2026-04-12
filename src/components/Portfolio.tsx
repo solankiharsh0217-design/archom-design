@@ -65,7 +65,7 @@ const Portfolio = () => {
         Sits securely throughout the massive height of the section.
       */}
       <div className="absolute inset-x-0 top-0 bottom-0 pointer-events-none z-20 mix-blend-difference text-white">
-        <div className="sticky top-20 md:top-24 lg:top-32 w-full flex flex-col items-center justify-start">
+        <div className="sticky top-16 md:top-24 lg:top-32 w-full flex flex-col items-center justify-start">
           <div className="text-xs font-bold tracking-widest uppercase mb-3 md:mb-4 flex items-center gap-2">
             <span className="w-1.5 h-1.5 bg-white rounded-full block" />
             GALLERY
