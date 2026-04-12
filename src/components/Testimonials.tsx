@@ -5,19 +5,19 @@ const journals = [
     id: 1,
     date: 'OCT 12, 2026',
     title: 'Spaces That Breathe',
-    image: '/images/hero_brutalist.png',
+    image: '/images/doZoqR7KksNcu3aswTZTcawiIU.avif',
   },
   {
     id: 2,
     date: 'NOV 05, 2026',
     title: 'Monolithic Materiality',
-    image: '/images/about_workspace.png',
+    image: '/images/PjHJMX19p4rUgEbsFA6rEDDges.avif',
   },
   {
     id: 3,
     date: 'JAN 22, 2027',
     title: 'The Brutalist Dialogue',
-    image: '/images/portfolio_building.png',
+    image: '/images/jzASxALajnk3J40K71ug7AoDDMw.avif',
   }
 ];
 
@@ -45,7 +45,7 @@ const Journals = () => {
                 <img 
                   src={journal.image} 
                   alt={journal.title} 
-                  className="w-full h-full object-cover grayscale brightness-90 group-hover:scale-105 transition-transform duration-700"
+                  className="w-full h-full object-cover brightness-90 group-hover:scale-105 transition-transform duration-700"
                 />
               </div>
               <div className="flex flex-col gap-2">

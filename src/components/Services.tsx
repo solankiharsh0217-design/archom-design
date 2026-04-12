@@ -35,9 +35,9 @@ const Services = () => {
             
             <div className="mt-16 bg-[var(--color-arch-white)] w-full aspect-video p-1">
               <img 
-                src="/images/portfolio_building.png" 
+                src="/images/IjTsCTG466nJ99Pl5SLqhrVhA.avif" 
                 alt="Service showcase" 
-                className="w-full h-full object-cover grayscale brightness-75"
+                className="w-full h-full object-cover brightness-75"
               />
             </div>
             

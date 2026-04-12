@@ -18,7 +18,7 @@ const About = () => {
             transition={{ duration: 1.2, ease: [0.76, 0, 0.24, 1] }}
             src="/images/about_workspace.png" 
             alt="Architect Workspace" 
-            className="w-full h-full object-cover grayscale"
+            className="w-full h-full object-cover"
           />
         </div>
 

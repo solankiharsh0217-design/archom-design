@@ -2,10 +2,10 @@ import { motion, useScroll, useTransform } from 'framer-motion';
 import { useRef } from 'react';
 
 const steps = [
-  { id: '01', title: 'DISCOVERY & VISION', img: '/images/about_workspace.png' },
-  { id: '02', title: 'CONCEPT & DESIGN', img: '/images/portfolio_building.png' },
-  { id: '03', title: 'COLLABORATION & BUILD', img: '/images/about_workspace.png' },
-  { id: '04', title: 'DELIVERY & IMPACT', img: '/images/portfolio_building.png' }
+  { id: '01', title: 'DISCOVERY & VISION', img: '/images/gnTOjNhe2Q616OKGknCOzIfQ.avif' },
+  { id: '02', title: 'CONCEPT & DESIGN', img: '/images/niManU1zLj9iNWkoC4SXUZwuaK8.avif' },
+  { id: '03', title: 'COLLABORATION & BUILD', img: '/images/doZoqR7KksNcu3aswTZTcawiIU.avif' },
+  { id: '04', title: 'DELIVERY & IMPACT', img: '/images/PjHJMX19p4rUgEbsFA6rEDDges.avif' }
 ];
 
 const ProcessStep = ({ step, index }: { step: typeof steps[0], index: number }) => {
@@ -35,7 +35,7 @@ const ProcessStep = ({ step, index }: { step: typeof steps[0], index: number }) 
           style={{ y: yImage }}
           src={step.img} 
           alt={step.title}
-          className="w-full h-[120%] object-cover grayscale opacity-0 group-hover:opacity-100 transition-opacity duration-500 scale-105"
+          className="w-full h-[120%] object-cover opacity-0 group-hover:opacity-100 transition-opacity duration-500 scale-105"
         />
       </div>
 

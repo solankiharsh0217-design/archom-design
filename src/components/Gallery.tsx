@@ -2,11 +2,11 @@ import { useRef, useState, useEffect } from 'react';
 import { motion } from 'framer-motion';
 
 const images = [
-  '/images/about_workspace.png',
-  '/images/portfolio_building.png',
-  '/images/about_workspace.png',
-  '/images/portfolio_building.png',
-  '/images/about_workspace.png',
+  '/images/gnTOjNhe2Q616OKGknCOzIfQ.avif',
+  '/images/x6yC9EkhN2AKECOLr6FgD3VpeI.avif',
+  '/images/hDRGGfmOv0QBfU3D207pf7ngiWE.avif',
+  '/images/DWkmatJGj3XD7iXhiYdI70dERNo.avif',
+  '/images/niManU1zLj9iNWkoC4SXUZwuaK8.avif',
 ];
 
 const Gallery = () => {
@@ -46,7 +46,7 @@ const Gallery = () => {
               <img 
                 src={img} 
                 alt={`Collection item ${index + 1}`} 
-                className="w-full h-full object-cover grayscale brightness-90 hover:grayscale-0 hover:brightness-100 transition-all duration-700 pointer-events-none"
+                className="w-full h-full object-cover brightness-90 hover:brightness-100 transition-all duration-700 pointer-events-none"
               />
             </motion.div>
           ))}
