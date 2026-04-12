@@ -4,18 +4,39 @@ import { motion, AnimatePresence } from 'framer-motion';
 const services = [
   {
     id: '01',
-    title: 'Architectural Design',
-    description: 'We conceive structures from the ground up, honoring material truth and spatial integrity. Our approach creates powerful, enduring forms.'
+    title: 'Ristrutturazioni Parziali e Totali',
+    description: 'Interveniamo su bagni, cucine, interni ed esterni. Ristrutturazione completa o parziale su misura per ogni esigenza.',
+    icon: '🏠'
   },
   {
     id: '02',
-    title: 'Interior Spaces',
-    description: 'Transitioning the brutalist philosophy inward, we craft stark yet deeply atmospheric interiors that manipulate light and shadow.'
+    title: 'Impianti Idrico-Sanitari',
+    description: 'Installazione, sostituzione e manutenzione di impianti idraulici e sanitari. La nostra specializzazione principale.',
+    icon: '🔧'
   },
   {
     id: '03',
-    title: 'Urban Planning',
-    description: 'Scaling our vision to the city level, we design entire districts that integrate monolithic architecture with functional brutalism.'
+    title: 'Installazione Impianti Fotovoltaici',
+    description: 'Forniamo e installiamo pannelli fotovoltaici per abitazioni e attività commerciali, riducendo i costi energetici.',
+    icon: '☀️'
+  },
+  {
+    id: '04',
+    title: 'Manutenzione Caldaie',
+    description: 'Manutenzione ordinaria e straordinaria, revisione e sostituzione caldaie di ogni marca e tipologia.',
+    icon: '🔥'
+  },
+  {
+    id: '05',
+    title: 'Progettazione e Redazione',
+    description: 'Supporto alla progettazione per interventi nell\'area metropolitana. Dall\'idea al cantiere, ti seguiamo in ogni fase.',
+    icon: '📐'
+  },
+  {
+    id: '06',
+    title: 'Manutenzione Generale',
+    description: 'Interventi di manutenzione ordinaria su impianti, strutture e finiture per privati e condomini.',
+    icon: '🔧'
   }
 ];
 
@@ -23,74 +44,69 @@ const Services = () => {
   const [activeAccordion, setActiveAccordion] = useState<string | null>('01');
 
   return (
-    <section id="services" className="w-full bg-[var(--color-arch-black)] text-[var(--color-arch-white)] py-32 px-8 min-h-screen">
-      <div className="max-w-[1920px] mx-auto grid grid-cols-1 lg:grid-cols-2 gap-16 lg:gap-32">
+    <section id="servizi" className="w-full bg-[var(--color-arch-black)] text-[var(--color-arch-white)] py-16 md:py-24 lg:py-32 px-6 md:px-8 overflow-hidden">
+      <div className="max-w-[1920px] mx-auto">
         
-        {/* Left Column - Sticky Image & CTA */}
-        <div className="h-full relative">
-          <div className="sticky top-32 lg:h-[70vh] flex flex-col justify-between">
-            <h2 className="text-5xl md:text-7xl font-black uppercase tracking-tighter w-2/3">
-              SHAPING THE HORIZON
-            </h2>
-            
-            <div className="mt-16 bg-[var(--color-arch-white)] w-full aspect-[4/3] p-1">
-              <img 
-                src="/images/1.avif" 
-                alt="Service showcase" 
-                className="w-full h-full object-cover brightness-75"
-              />
-            </div>
-            
-            <button className="mt-8 flex items-center justify-between w-full py-6 border-b border-[var(--color-arch-gray)] hover:border-[var(--color-arch-white)] transition-colors group">
-              <span className="text-lg font-bold tracking-widest uppercase">Start Your Next Project</span>
-              <span className="text-2xl group-hover:translate-x-2 transition-transform">→</span>
-            </button>
+        {/* Section Header */}
+        <div className="mb-12 md:mb-16 lg:mb-24">
+          <div className="text-sm font-semibold tracking-widest uppercase mb-4 flex items-center gap-4 opacity-70">
+            <span className="w-2 h-2 bg-white rounded-full" />
+            I NOSTRI SERVIZI
           </div>
+          <h2 className="text-3xl md:text-5xl lg:text-6xl xl:text-7xl font-black uppercase tracking-tighter">
+            COSTRUIAMO IL TUO FUTURO
+          </h2>
         </div>
 
-        {/* Right Column - Accordion */}
-        <div className="flex flex-col justify-center h-full">
+        {/* Services Grid */}
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8">
           {services.map((service) => (
-            <div 
-              key={service.id} 
-              className="border-b border-[var(--color-arch-gray)]"
+            <motion.div
+              key={service.id}
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.5 }}
+              viewport={{ once: true }}
+              className="group relative bg-[var(--color-arch-gray)] p-6 md:p-8 cursor-pointer"
+              onClick={() => setActiveAccordion(activeAccordion === service.id ? null : service.id)}
             >
-              <button
-                className="w-full py-8 lg:py-16 flex items-center justify-between text-left group"
-                onClick={() => setActiveAccordion(activeAccordion === service.id ? null : service.id)}
-              >
-                <div className="flex items-center gap-8">
-                  <span className={`text-xl lg:text-3xl font-display transition-colors ${activeAccordion === service.id ? 'text-[var(--color-arch-white)]' : 'text-gray-500'}`}>
-                    {service.id}/
-                  </span>
-                  <span className={`text-3xl lg:text-6xl font-black uppercase tracking-tighter group-hover:text-[var(--color-arch-lightgray)] transition-colors ${activeAccordion === service.id ? 'text-[var(--color-arch-white)]' : 'text-gray-500'}`}>
-                    {service.title}
-                  </span>
-                </div>
-              </button>
-
+              <div className="text-3xl md:text-4xl mb-4">{service.icon}</div>
+              <div className="flex items-center gap-3 mb-3">
+                <span className="text-xs md:text-sm font-display text-gray-400">{service.id}/</span>
+                <h3 className="text-lg md:text-xl lg:text-2xl font-black uppercase tracking-tighter">
+                  {service.title}
+                </h3>
+              </div>
+              
               <AnimatePresence>
                 {activeAccordion === service.id && (
                   <motion.div
                     initial={{ height: 0, opacity: 0 }}
                     animate={{ height: 'auto', opacity: 1 }}
                     exit={{ height: 0, opacity: 0 }}
-                    transition={{ duration: 0.5, ease: [0.76, 0, 0.24, 1] }}
+                    transition={{ duration: 0.4, ease: [0.76, 0, 0.24, 1] }}
                     className="overflow-hidden"
                   >
-                    <div className="pb-16 pt-4 pl-16 lg:pl-24 max-w-xl text-lg lg:text-xl text-gray-400">
+                    <p className="text-sm md:text-base text-gray-300 pt-2">
                       {service.description}
-                      <div className="mt-8">
-                        <button className="text-sm font-bold tracking-widest uppercase border border-[var(--color-arch-gray)] hover:border-white px-6 py-3 rounded-full transition-colors hidden lg:inline-block">
-                          GET STARTED
-                        </button>
-                      </div>
-                    </div>
+                    </p>
                   </motion.div>
                 )}
               </AnimatePresence>
-            </div>
+              
+              <div className={`mt-4 text-xs font-bold tracking-wider uppercase transition-transform duration-300 ${activeAccordion === service.id ? 'rotate-180' : ''}`}>
+                {activeAccordion === service.id ? 'CHIUDI' : 'SCOPRI DI PIÙ'} →
+              </div>
+            </motion.div>
           ))}
+        </div>
+
+        {/* CTA */}
+        <div className="mt-12 md:mt-16 lg:mt-24">
+          <button className="group relative flex items-center justify-center gap-4 px-8 md:px-12 py-4 md:py-5 bg-[var(--color-arch-white)] text-[var(--color-arch-black)] rounded-full overflow-hidden hover:bg-gray-200 transition-colors">
+            <span className="relative z-10 font-bold uppercase tracking-widest text-sm md:text-base">Tutti i Servizi</span>
+            <span className="text-xl group-hover:translate-x-2 transition-transform">→</span>
+          </button>
         </div>
 
       </div>

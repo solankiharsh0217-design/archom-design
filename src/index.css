@@ -76,7 +76,7 @@ h1, h2, h3, h4, h5, h6 {
 /* Base custom font utility classes for extreme brutalist typography */
 @layer utilities {
   .text-mega {
-    font-size: clamp(3.5rem, 9.5vw, 12rem);
+    font-size: clamp(2.5rem, 8vw, 12rem);
     letter-spacing: -0.04em;
     line-height: 0.85;
   }
@@ -111,5 +111,16 @@ h1, h2, h3, h4, h5, h6 {
 @media (pointer: coarse) {
   .custom-cursor {
     display: none !important;
+  }
+}
+
+/* Mobile responsiveness fixes */
+@media (max-width: 768px) {
+  html {
+    font-size: 14px;
+  }
+  
+  section {
+    overflow-x: hidden;
   }
 }
