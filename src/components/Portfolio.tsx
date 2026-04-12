@@ -61,16 +61,15 @@ const Portfolio = () => {
       
       {/* 
         The Heading:
-        Now locked to the top just underneath the navbar logic.
-        Sits securely throughout the massive height of the section.
+        Fixed on mobile, sticky on desktop - stays at top while scrolling
       */}
-      <div className="absolute inset-x-0 top-0 bottom-0 pointer-events-none z-20 mix-blend-difference text-white">
-        <div className="sticky top-16 md:top-24 lg:top-32 w-full flex flex-col items-center justify-start">
-          <div className="text-xs font-bold tracking-widest uppercase mb-3 md:mb-4 flex items-center gap-2">
-            <span className="w-1.5 h-1.5 bg-white rounded-full block" />
+      <div className="md:absolute inset-x-0 md:top-0 md:bottom-0 pointer-events-none md:z-20 mix-blend-difference text-white">
+        <div className="md:sticky md:top-16 lg:top-32 w-full flex flex-col items-center justify-start py-4 md:py-0 bg-[var(--color-arch-white)] md:bg-transparent">
+          <div className="text-xs font-bold tracking-widest uppercase mb-2 md:mb-4 flex items-center gap-2">
+            <span className="w-1.5 h-1.5 bg-white md:bg-white block" />
             GALLERY
           </div>
-          <h2 className="text-4xl md:text-6xl lg:text-8xl xl:text-9xl text-center leading-[0.85] font-black tracking-tighter">
+          <h2 className="text-4xl md:text-6xl lg:text-8xl xl:text-9xl text-center leading-[0.85] font-black tracking-tighter text-black md:text-white">
             I NOSTRI<br/>LAVORI
           </h2>
         </div>
@@ -80,7 +79,7 @@ const Portfolio = () => {
         The Images Track
         Extensive vertical gaps so only one massive image interacts at a time.
       */}
-      <div className="relative z-10 w-full max-w-[1920px] mx-auto px-6 md:px-8 pt-[25vh] md:pt-[28vh] lg:pt-[30vh] flex flex-col gap-[60vh] md:gap-[70vh] lg:gap-[75vh]">
+      <div className="relative z-10 w-full max-w-[1920px] mx-auto px-6 md:px-8 pt-[20vh] md:pt-[25vh] lg:pt-[30vh] flex flex-col gap-[60vh] md:gap-[70vh] lg:gap-[75vh]">
         {projects.map((project, idx) => (
           <ProjectCard key={project.id} project={project} index={idx} />
         ))}
