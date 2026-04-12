@@ -33,11 +33,11 @@ const Services = () => {
               SHAPING THE HORIZON
             </h2>
             
-            <div className="mt-16 bg-[var(--color-arch-white)] w-full aspect-video p-1">
+            <div className="mt-16 bg-[var(--color-arch-white)] w-full aspect-[4/3] p-1">
               <img 
                 src="/images/IjTsCTG466nJ99Pl5SLqhrVhA.avif" 
                 alt="Service showcase" 
-                className="w-full h-full object-cover object-[center_bottom] brightness-75"
+                className="w-full h-full object-cover brightness-75"
               />
             </div>
             
