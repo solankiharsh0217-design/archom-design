@@ -23,25 +23,25 @@ const Services = () => {
   const [activeAccordion, setActiveAccordion] = useState<string | null>('01');
 
   return (
-    <section id="services" className="w-full bg-[var(--color-arch-black)] text-[var(--color-arch-white)] py-32 px-8 overflow-hidden">
+    <section id="services" className="w-full bg-[var(--color-arch-black)] text-[var(--color-arch-white)] py-32 px-8 min-h-screen">
       <div className="max-w-[1920px] mx-auto grid grid-cols-1 lg:grid-cols-2 gap-16 lg:gap-32">
         
         {/* Left Column - Sticky Image & CTA */}
         <div className="h-full relative">
-          <div className="sticky top-32 lg:top-32 flex flex-col justify-between h-[calc(100vh-8rem)]">
+          <div className="sticky top-32 lg:h-[70vh] flex flex-col justify-between">
             <h2 className="text-5xl md:text-7xl font-black uppercase tracking-tighter w-2/3">
               SHAPING THE HORIZON
             </h2>
             
-            <div className="mt-8 bg-[var(--color-arch-white)] w-full aspect-video p-1">
+            <div className="mt-16 bg-[var(--color-arch-white)] w-full aspect-video p-1">
               <img 
                 src="/images/IjTsCTG466nJ99Pl5SLqhrVhA.avif" 
                 alt="Service showcase" 
-                className="w-full h-full object-cover brightness-75"
+                className="w-full h-full object-cover object-[center_bottom] brightness-75"
               />
             </div>
             
-            <button className="mt-4 flex items-center justify-between w-full py-4 border-b border-[var(--color-arch-gray)] hover:border-[var(--color-arch-white)] transition-colors group">
+            <button className="mt-8 flex items-center justify-between w-full py-6 border-b border-[var(--color-arch-gray)] hover:border-[var(--color-arch-white)] transition-colors group">
               <span className="text-lg font-bold tracking-widest uppercase">Start Your Next Project</span>
               <span className="text-2xl group-hover:translate-x-2 transition-transform">→</span>
             </button>
