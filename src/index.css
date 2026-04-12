@@ -1,0 +1,126 @@
+@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Inter:wght@300;400;500;600;700;800;900&display=swap');
+@import "tailwindcss";
+
+@theme {
+  --color-arch-black: #050505;
+  --color-arch-white: #fafafa;
+  --color-arch-gray: #1a1a1a;
+  --color-arch-lightgray: #e5e5e5;
+  
+  --font-sans: 'Inter', system-ui, sans-serif;
+  --font-display: 'Bebas Neue', sans-serif;
+}
+
+:root {
+  --background: var(--color-arch-white);
+  --foreground: var(--color-arch-black);
+}
+
+.dark {
+  --background: var(--color-arch-black);
+  --foreground: var(--color-arch-white);
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+  font-family: var(--font-sans);
+}
+
+body {
+  margin: 0;
+  background: var(--background);
+  color: var(--foreground);
+  overflow-x: hidden;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--font-sans);
+  text-transform: uppercase;
+  font-weight: 800;
+  letter-spacing: -0.02em;
+  margin: 0;
+  line-height: 1.1;
+}
+
+.font-display {
+  font-family: var(--font-display);
+}
+
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--background);
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--color-arch-lightgray);
+}
+
+.dark ::-webkit-scrollbar-thumb {
+  background: var(--color-arch-gray);
+}
+
+::selection {
+  background: var(--foreground);
+  color: var(--background);
+}
+
+/* Base custom font utility classes for extreme brutalist typography */
+@layer utilities {
+  .text-mega {
+    font-size: clamp(2.5rem, 8vw, 12rem);
+    letter-spacing: -0.04em;
+    line-height: 0.85;
+  }
+}
+
+/* Custom Cursor */
+@media (pointer: fine) {
+  .custom-cursor {
+    position: fixed;
+    width: 16px;
+    height: 16px;
+    background: white;
+    border-radius: 50%;
+    pointer-events: none;
+    z-index: 9999;
+    mix-blend-difference: difference;
+    transform: translate(-50%, -50%);
+    transition: width 0.3s cubic-bezier(0.25, 1, 0.5, 1), height 0.3s cubic-bezier(0.25, 1, 0.5, 1);
+    display: block;
+    backdrop-filter: invert(100%);
+  }
+  
+  .custom-cursor.hovering {
+    width: 60px;
+    height: 60px;
+    background: transparent;
+    border: 1px solid white;
+    mix-blend-difference: difference;
+  }
+}
+
+@media (pointer: coarse) {
+  .custom-cursor {
+    display: none !important;
+  }
+}
+
+/* Mobile responsiveness fixes */
+@media (max-width: 768px) {
+  html {
+    font-size: 14px;
+  }
+  
+  section {
+    overflow-x: hidden;
+  }
+}
