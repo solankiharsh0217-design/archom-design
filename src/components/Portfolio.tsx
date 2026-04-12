@@ -24,13 +24,13 @@ const ProjectCard = ({ project, index }: { project: typeof projects[0], index: n
     offset: ["start end", "end start"]
   });
 
-  const smoothProgress = useSpring(scrollYProgress, { stiffness: 100, damping: 30, mass: 0.5 });
+  const smoothProgress = useSpring(scrollYProgress, { stiffness: 150, damping: 20, mass: 0.5 });
   
-  const xOffset = isMobile ? "150%" : "120%";
-  const x = useTransform(smoothProgress, [0.1, 0.8], [xOffset, "0%"]);
-  const xReverse = useTransform(smoothProgress, [0.1, 0.8], ["-" + xOffset, "0%"]);
-  const scale = useTransform(smoothProgress, [0.1, 0.8], [0.85, 1]);
-  const opacity = useTransform(smoothProgress, [0, 0.25], [0, 1]);
+  const xOffset = isMobile ? "100%" : "120%";
+  const x = useTransform(smoothProgress, [0, 0.5], [xOffset, "0%"]);
+  const xReverse = useTransform(smoothProgress, [0, 0.5], ["-" + xOffset, "0%"]);
+  const scale = useTransform(smoothProgress, [0, 0.5], [0.9, 1]);
+  const opacity = useTransform(smoothProgress, [0, 0.15], [0, 1]);
 
   return (
     <motion.div 
