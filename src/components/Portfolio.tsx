@@ -1,5 +1,5 @@
-import { useRef } from 'react';
-import { motion, useScroll, useTransform } from 'framer-motion';
+import { useRef, useEffect, useState } from 'react';
+import { motion, useScroll, useTransform, useSpring } from 'framer-motion';
 
 const projects = [
   { id: 1, name: 'Ristrutturazione Completa', year: '2024', image: '/images/1.avif' },
@@ -10,24 +10,35 @@ const projects = [
 
 const ProjectCard = ({ project, index }: { project: typeof projects[0], index: number }) => {
   const cardRef = useRef<HTMLDivElement>(null);
+  const [isMobile, setIsMobile] = useState(false);
+  
+  useEffect(() => {
+    const checkMobile = () => setIsMobile(window.innerWidth < 768);
+    checkMobile();
+    window.addEventListener('resize', checkMobile);
+    return () => window.removeEventListener('resize', checkMobile);
+  }, []);
   
   const { scrollYProgress } = useScroll({
     target: cardRef,
     offset: ["start end", "end start"]
   });
 
-  const xOffset = index % 2 === 0 ? "-90%" : "90%";
-  const x = useTransform(scrollYProgress, [0.2, 0.75], ["0%", xOffset]);
-  const scale = useTransform(scrollYProgress, [0.2, 0.75], [1, 0.95]);
-  const opacity = useTransform(scrollYProgress, [0.8, 1], [1, 0]);
+  const smoothProgress = useSpring(scrollYProgress, { stiffness: 100, damping: 30, mass: 0.5 });
+  
+  const xOffset = isMobile ? "150%" : "120%";
+  const x = useTransform(smoothProgress, [0.1, 0.8], [xOffset, "0%"]);
+  const xReverse = useTransform(smoothProgress, [0.1, 0.8], ["-" + xOffset, "0%"]);
+  const scale = useTransform(smoothProgress, [0.1, 0.8], [0.85, 1]);
+  const opacity = useTransform(smoothProgress, [0, 0.25], [0, 1]);
 
   return (
     <motion.div 
       ref={cardRef}
-      style={{ x, scale, opacity }}
-      className="w-full max-w-2xl mx-auto relative z-10 will-change-transform"
+      style={{ x: index % 2 === 0 ? x : xReverse, scale, opacity }}
+      className="w-[90%] md:w-full max-w-2xl mx-auto relative z-10 will-change-transform"
     >
-      <div className="overflow-hidden bg-[var(--color-arch-lightgray)] w-full aspect-[4/5] md:aspect-video relative shadow-2xl">
+      <div className="overflow-hidden bg-[var(--color-arch-lightgray)] w-full aspect-[3/4] md:aspect-video relative shadow-2xl">
         <motion.img
           whileHover={{ scale: 1.05 }}
           transition={{ duration: 0.6, ease: [0.33, 1, 0.68, 1] }}
@@ -37,7 +48,7 @@ const ProjectCard = ({ project, index }: { project: typeof projects[0], index: n
         />
       </div>
       <div className="mt-3 md:mt-4 flex justify-between items-end border-b-2 border-black pb-2 bg-[var(--color-arch-white)]">
-        <h3 className="text-xl md:text-2xl lg:text-3xl font-black uppercase tracking-tighter">{project.name}</h3>
+        <h3 className="text-lg md:text-2xl lg:text-3xl font-black uppercase tracking-tighter">{project.name}</h3>
         <span className="text-sm md:text-lg font-bold">{project.year}</span>
       </div>
     </motion.div>
