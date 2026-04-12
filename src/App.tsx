@@ -1,3 +1,4 @@
+import { Routes, Route } from 'react-router-dom';
 import SmoothScroll from "./components/SmoothScroll";
 import CustomCursor from "./components/CustomCursor";
 import Navbar from "./components/Navbar";
@@ -5,16 +6,18 @@ import Hero from "./components/Hero";
 import About from "./components/About";
 import Services from "./components/Services";
 import Portfolio from "./components/Portfolio";
-import WhyChooseUs from "./components/Process";
+import WhyChooseUs from "./components/WhyChooseUs";
 import Testimonials from "./components/Testimonials";
 import Contact from "./components/Contact";
 import Footer from "./components/Footer";
+import ServiziPage from "./pages/ServiziPage";
+import LavoriPage from "./pages/LavoriPage";
+import ChiSiamoPage from "./pages/ChiSiamoPage";
+import ContattiPage from "./pages/ContattiPage";
 
-function App() {
+function HomePage() {
   return (
-    <SmoothScroll>
-      <CustomCursor />
-      <Navbar />
+    <>
       <Hero />
       <About />
       <Services />
@@ -22,6 +25,22 @@ function App() {
       <WhyChooseUs />
       <Testimonials />
       <Contact />
+    </>
+  );
+}
+
+function App() {
+  return (
+    <SmoothScroll>
+      <CustomCursor />
+      <Navbar />
+      <Routes>
+        <Route path="/" element={<HomePage />} />
+        <Route path="/servizi" element={<ServiziPage />} />
+        <Route path="/lavori" element={<LavoriPage />} />
+        <Route path="/chi-siamo" element={<ChiSiamoPage />} />
+        <Route path="/contatti" element={<ContattiPage />} />
+      </Routes>
       <Footer />
     </SmoothScroll>
   );
