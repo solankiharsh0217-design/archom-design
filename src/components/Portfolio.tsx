@@ -61,11 +61,11 @@ const Portfolio = () => {
       
       {/* 
         The Heading:
-        Now locked to the top just underneath the navbar logic.
-        Sits securely throughout the massive height of the section.
+        Stays at top while scrolling - works on both mobile and desktop
+        Parent is absolute to span full section height
       */}
-      <div className="absolute inset-x-0 top-0 bottom-0 pointer-events-none z-20 mix-blend-difference text-white">
-        <div className="sticky top-16 md:top-24 lg:top-32 w-full flex flex-col items-center justify-start">
+      <div className="absolute inset-x-0 top-0 pointer-events-none z-20 mix-blend-difference text-white">
+        <div className="sticky top-16 md:top-24 lg:top-32 w-full flex flex-col items-center justify-start h-[100vh]">
           <div className="text-xs font-bold tracking-widest uppercase mb-3 md:mb-4 flex items-center gap-2">
             <span className="w-1.5 h-1.5 bg-white rounded-full block" />
             GALLERY
