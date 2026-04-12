@@ -2,7 +2,7 @@ import { useRef } from 'react';
 import { motion, useScroll, useTransform } from 'framer-motion';
 
 const projects = [
-  { id: 1, name: 'Elysian Spire', year: '2025', image: '/images/gallery_section_1_1775868322866.png' },
+  { id: 1, name: 'Elysian Spire', year: '2025', image: '/images/IjTsCTG466nJ99Pl5SLqhrVhA.avif' },
   { id: 2, name: 'Solara Pavilion', year: '2024', image: '/images/x6yC9EkhN2AKECOLr6FgD3VpeI.avif' },
   { id: 3, name: 'Nebura Heights', year: '2016', image: '/images/DWkmatJGj3XD7iXhiYdI70dERNo.avif' },
   { id: 4, name: 'Etoile Grand', year: '2020', image: '/images/hDRGGfmOv0QBfU3D207pf7ngiWE.avif' }
