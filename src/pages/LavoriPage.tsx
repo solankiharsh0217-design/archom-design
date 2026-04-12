@@ -47,7 +47,7 @@ const LavoriPage = () => {
       </section>
 
       {/* Category Filter */}
-      <section className="py-4 md:py-6 px-6 md:px-8 border-b border-white/20 sticky top-16 md:top-20 bg-[var(--color-arch-black)] z-30">
+      <section className="py-3 md:py-4 px-6 md:px-8 border-b border-white/20 sticky top-16 bg-[var(--color-arch-black)] z-30">
         <div className="max-w-[1920px] mx-auto flex flex-wrap gap-4 justify-center">
           {categories.map(category => (
             <button
