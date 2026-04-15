@@ -1,7 +1,15 @@
 import { useRef } from 'react';
 import { motion, useScroll, useTransform } from 'framer-motion';
 
-const servicesPage = [
+interface Service {
+  id: string;
+  title: string;
+  description: string;
+  features: string[];
+  image: string;
+}
+
+const servicesPage: Service[] = [
   {
     id: '01',
     title: 'Ristrutturazioni Parziali e Totali',
@@ -21,101 +29,94 @@ const servicesPage = [
     title: 'Impianti Idrico-Sanitari',
     description: 'Installazione, sostituzione e manutenzione di impianti idraulici e sanitari. La nostra specializzazione principale.',
     features: ['Installazione', 'Sostituzione tubature', 'Manutenzione', 'Sanitari'],
-    image: '/images/1.avif'
+    image: '/images/portfolio_building.png'
   },
   {
     id: '04',
     title: 'Installazione Impianti Fotovoltaici',
     description: 'Forniamo e installiamo pannelli fotovoltaici per abitazioni e attività commerciali.',
     features: ['Consulenza energetica', 'Pannelli solari', 'Gestione pratiche', 'Manutenzione'],
-    image: '/images/2.avif'
+    image: '/images/hero_brutalist.png'
   },
   {
     id: '05',
     title: 'Manutenzione Caldaie',
     description: 'Manutenzione ordinaria e straordinaria, caldaie tradizionali, a pellet e ibride. Redazione perizie termotecniche.',
     features: ['Manutenzione', 'Caldaie pellet', 'Caldaie ibride', 'Perizie termotecniche'],
-    image: '/images/1.avif'
+    image: '/images/contact_dome.png'
   },
   {
     id: '06',
     title: 'Rifacimento Tetti e Bonifica',
     description: 'Ristrutturiamo completamente qualsiasi tipologia di tetto. Bonifica da eternit e amianto.',
     features: ['Rifacimento tetti', 'Bonifica amianto', 'Bonifica eternit', 'Sicurezza'],
-    image: '/images/2.avif'
+    image: '/images/about_workspace.png'
   },
   {
     id: '07',
     title: 'Assistenza Pratiche Comunali e Catastali',
     description: 'Supporto tecnico per pratiche comunali e catastali, inclusi cambi di destinazione d\'uso.',
     features: ['Pratiche comunali', 'Pratiche catastali', 'Cambio destinazione uso', 'Burocrazia'],
-    image: '/images/1.avif'
+    image: '/images/jzASxALajnk3J40K71ug7AoDDMw.avif'
   },
   {
     id: '08',
     title: 'Noleggio e Installazione Ponteggi',
     description: 'Noleggio e installazione professionale di ponteggi e parapetti per lavori edili.',
     features: ['Ponteggi', 'Parapetti', 'Installazione', 'Sicurezza'],
-    image: '/images/2.avif'
+    image: '/images/niManU1zLj9iNWkoC4SXUZwuaK8.avif'
   },
   {
     id: '09',
     title: 'Realizzazione Aree Verdi',
     description: 'Progettazione e realizzazione di aree verdi con sistemi di irrigazione automatici.',
     features: ['Giardini', 'Aree verdi', 'Irrigazione', 'Progettazione'],
-    image: '/images/1.avif'
+    image: '/images/gnTOjNhe2Q616OKGknCOzIfQ.avif'
   },
   {
     id: '10',
     title: 'Lavori di Fabbro',
     description: 'Creazione di recinzioni, cancelli, cancellini e strutture metalliche su misura.',
     features: ['Recinzioni', 'Cancelli', 'Cancellini', 'Strutture metalliche'],
-    image: '/images/2.avif'
+    image: '/images/hDRGGfmOv0QBfU3D207pf7ngiWE.avif'
   },
   {
     id: '11',
     title: 'Disotturazioni e Spurghi',
     description: 'Interventi rapidi per disotturazione e spurgo di tombini, wc, lavandini e condotte.',
     features: ['Disotturazione', 'Spurghi', 'Emergenze', 'Condotte'],
-    image: '/images/1.avif'
+    image: '/images/doZoqR7KksNcu3aswTZTcawiIU.avif'
   },
   {
     id: '12',
     title: 'Progettazione e Redazione',
     description: 'Supporto alla progettazione per interventi. Dall\'idea al cantiere, ti seguiamo in ogni fase.',
     features: ['Progettazione', 'Redazione pratiche', 'Direzione lavori', 'Consulenza'],
-    image: '/images/2.avif'
+    image: '/images/DWkmatJGj3XD7iXhiYdI70dERNo.avif'
   },
   {
     id: '13',
     title: 'Manutenzione Generale',
     description: 'Interventi di manutenzione ordinaria su impianti, strutture e finiture per privati e condomini.',
     features: ['Manutenzione impianti', 'Riparazioni', 'Finiture', 'Condomini'],
-    image: '/images/1.avif'
+    image: '/images/IjTsCTG466nJ99Pl5SLqhrVhA.avif'
   }
 ];
 
-const ServiceSection = ({ service, index }: { service: typeof servicesPage[0]; index: number }) => {
+interface ServiceSectionProps {
+  service: Service;
+  index: number;
+}
+
+const ServiceSection = ({ service, index }: ServiceSectionProps) => {
   const ref = useRef<HTMLDivElement>(null);
+  
   const { scrollYProgress } = useScroll({
     target: ref,
     offset: ["start end", "end start"]
   });
 
-  const y = useTransform(scrollYProgress, [0, 1], ["20%", "-20%"]);
-  const scale = useTransform(scrollYProgress, [0, 0.5, 1], [0.8, 1, 0.8]);
-  const opacity = useTransform(scrollYProgress, [0, 0.3, 0.7, 1], [0, 1, 1, 0]);
-
-  const cardVariants = {
-    hidden: { opacity: 0, y: 30 },
-    visible: { 
-      opacity: 1,
-      y: 0,
-      transition: {
-        duration: 0.5
-      }
-    }
-  };
+  const y = useTransform(scrollYProgress, [0, 1], ["15%", "-15%"]);
 
   return (
     <section 
@@ -133,11 +134,11 @@ const ServiceSection = ({ service, index }: { service: typeof servicesPage[0]; i
 
       <div className="relative z-10 max-w-[1920px] mx-auto w-full">
         <motion.div
-          initial={{ opacity: 0, y: -50 }}
+          initial={{ opacity: 0, y: -30 }}
           whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8 }}
-          viewport={{ once: false, amount: 0.3 }}
-          className="text-center mb-8 md:mb-12"
+          transition={{ duration: 0.6 }}
+          viewport={{ once: true, amount: 0.3 }}
+          className="text-center mb-8 md:mb-12 relative"
         >
           <span className="text-6xl md:text-8xl lg:text-9xl font-black text-white/10 absolute left-1/2 -translate-x-1/2 top-0">
             {service.id}
@@ -148,10 +149,10 @@ const ServiceSection = ({ service, index }: { service: typeof servicesPage[0]; i
         </motion.div>
 
         <motion.div
-          initial={{ opacity: 0, scale: 0.9 }}
-          whileInView={{ opacity: 1, scale: 1 }}
-          transition={{ duration: 0.6, delay: 0.2 }}
-          viewport={{ once: false, amount: 0.3 }}
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.5, delay: 0.1 }}
+          viewport={{ once: true, amount: 0.3 }}
           className="bg-[var(--color-arch-gray)] p-6 md:p-10 lg:p-14 rounded-lg max-w-4xl mx-auto backdrop-blur-sm border border-white/10"
         >
           <p className="text-base md:text-xl lg:text-2xl text-gray-300 mb-8 md:mb-12 text-center font-medium leading-relaxed">
@@ -161,10 +162,11 @@ const ServiceSection = ({ service, index }: { service: typeof servicesPage[0]; i
           <div className="flex flex-wrap justify-center gap-3 md:gap-4">
             {service.features.map((feature, idx) => (
               <motion.span
-                initial="hidden"
-                whileInView="visible"
-                variants={cardVariants}
-                viewport={{ once: false, amount: 0.3 }}
+                key={idx}
+                initial={{ opacity: 0, y: 10 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.4, delay: 0.1 + idx * 0.05 }}
+                viewport={{ once: true }}
                 className="px-5 py-3 bg-white/10 text-sm md:text-base font-bold uppercase tracking-wider text-white rounded-lg border border-white/20 hover:bg-white/20 hover:scale-105 transition-all cursor-default"
               >
                 {feature}
@@ -174,10 +176,10 @@ const ServiceSection = ({ service, index }: { service: typeof servicesPage[0]; i
         </motion.div>
 
         <motion.div
-          initial={{ opacity: 0, y: 20 }}
+          initial={{ opacity: 0, y: 15 }}
           whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6, delay: 0.4 }}
-          viewport={{ once: false, amount: 0.3 }}
+          transition={{ duration: 0.5, delay: 0.2 }}
+          viewport={{ once: true }}
           className="text-center mt-8 md:mt-12"
         >
           <a 
@@ -189,13 +191,15 @@ const ServiceSection = ({ service, index }: { service: typeof servicesPage[0]; i
         </motion.div>
       </div>
 
-      <motion.div 
-        className="absolute bottom-8 left-1/2 -translate-x-1/2"
-        animate={{ y: [0, 10, 0] }}
-        transition={{ duration: 2, repeat: Infinity }}
-      >
-        <span className="text-white/50 text-4xl">↓</span>
-      </motion.div>
+      {index < servicesPage.length - 1 && (
+        <motion.div 
+          className="absolute bottom-8 left-1/2 -translate-x-1/2"
+          animate={{ y: [0, 8, 0] }}
+          transition={{ duration: 1.5, repeat: Infinity }}
+        >
+          <span className="text-white/40 text-3xl">↓</span>
+        </motion.div>
+      )}
     </section>
   );
 };
@@ -203,7 +207,6 @@ const ServiceSection = ({ service, index }: { service: typeof servicesPage[0]; i
 const ServiziPage = () => {
   return (
     <div className="bg-[var(--color-arch-black)]">
-      {/* Hero Section */}
       <section className="relative w-full h-[50vh] md:h-[60vh] overflow-hidden">
         <img 
           src="/images/1.avif" 
@@ -228,14 +231,12 @@ const ServiziPage = () => {
         </div>
       </section>
 
-      {/* Services Scroll Sections */}
       <div className="relative">
         {servicesPage.map((service, index) => (
           <ServiceSection key={service.id} service={service} index={index} />
         ))}
       </div>
 
-      {/* CTA Section */}
       <section className="py-24 md:py-32 px-6 md:px-8 relative overflow-hidden">
         <div className="absolute inset-0">
           <img src="/images/contact_dome.png" alt="" className="w-full h-full object-cover opacity-30" />
