@@ -21,77 +21,77 @@ const servicesPage = [
     title: 'Impianti Idrico-Sanitari',
     description: 'Installazione, sostituzione e manutenzione di impianti idraulici e sanitari. La nostra specializzazione principale.',
     features: ['Installazione', 'Sostituzione tubature', 'Manutenzione', 'Sanitari'],
-    image: '/images/3.avif'
+    image: '/images/1.avif'
   },
   {
     id: '04',
     title: 'Installazione Impianti Fotovoltaici',
     description: 'Forniamo e installiamo pannelli fotovoltaici per abitazioni e attività commerciali.',
     features: ['Consulenza energetica', 'Pannelli solari', 'Gestione pratiche', 'Manutenzione'],
-    image: '/images/4.avif'
+    image: '/images/2.avif'
   },
   {
     id: '05',
     title: 'Manutenzione Caldaie',
     description: 'Manutenzione ordinaria e straordinaria, caldaie tradizionali, a pellet e ibride. Redazione perizie termotecniche.',
     features: ['Manutenzione', 'Caldaie pellet', 'Caldaie ibride', 'Perizie termotecniche'],
-    image: '/images/5.avif'
+    image: '/images/1.avif'
   },
   {
     id: '06',
     title: 'Rifacimento Tetti e Bonifica',
     description: 'Ristrutturiamo completamente qualsiasi tipologia di tetto. Bonifica da eternit e amianto.',
-    features: ['Rifacimento tetti', 'Bonifica amianto', 'Bonifica eternit', 'sicurezza'],
-    image: '/images/6.avif'
+    features: ['Rifacimento tetti', 'Bonifica amianto', 'Bonifica eternit', 'Sicurezza'],
+    image: '/images/2.avif'
   },
   {
     id: '07',
     title: 'Assistenza Pratiche Comunali e Catastali',
     description: 'Supporto tecnico per pratiche comunali e catastali, inclusi cambi di destinazione d\'uso.',
     features: ['Pratiche comunali', 'Pratiche catastali', 'Cambio destinazione uso', 'Burocrazia'],
-    image: '/images/7.avif'
+    image: '/images/1.avif'
   },
   {
     id: '08',
     title: 'Noleggio e Installazione Ponteggi',
     description: 'Noleggio e installazione professionale di ponteggi e parapetti per lavori edili.',
     features: ['Ponteggi', 'Parapetti', 'Installazione', 'Sicurezza'],
-    image: '/images/8.avif'
+    image: '/images/2.avif'
   },
   {
     id: '09',
     title: 'Realizzazione Aree Verdi',
     description: 'Progettazione e realizzazione di aree verdi con sistemi di irrigazione automatici.',
     features: ['Giardini', 'Aree verdi', 'Irrigazione', 'Progettazione'],
-    image: '/images/9.avif'
+    image: '/images/1.avif'
   },
   {
     id: '10',
     title: 'Lavori di Fabbro',
     description: 'Creazione di recinzioni, cancelli, cancellini e strutture metalliche su misura.',
     features: ['Recinzioni', 'Cancelli', 'Cancellini', 'Strutture metalliche'],
-    image: '/images/10.avif'
+    image: '/images/2.avif'
   },
   {
     id: '11',
     title: 'Disotturazioni e Spurghi',
     description: 'Interventi rapidi per disotturazione e spurgo di tombini, wc, lavandini e condotte.',
     features: ['Disotturazione', 'Spurghi', 'Emergenze', 'Condotte'],
-    image: '/images/11.avif'
+    image: '/images/1.avif'
   },
   {
     id: '12',
     title: 'Progettazione e Redazione',
     description: 'Supporto alla progettazione per interventi. Dall\'idea al cantiere, ti seguiamo in ogni fase.',
     features: ['Progettazione', 'Redazione pratiche', 'Direzione lavori', 'Consulenza'],
-    image: '/images/12.avif'
+    image: '/images/2.avif'
   },
   {
     id: '13',
     title: 'Manutenzione Generale',
     description: 'Interventi di manutenzione ordinaria su impianti, strutture e finiture per privati e condomini.',
     features: ['Manutenzione impianti', 'Riparazioni', 'Finiture', 'Condomini'],
-    image: '/images/13.avif'
+    image: '/images/1.avif'
   }
 ];
 
@@ -107,18 +107,14 @@ const ServiceSection = ({ service, index }: { service: typeof servicesPage[0]; i
   const opacity = useTransform(scrollYProgress, [0, 0.3, 0.7, 1], [0, 1, 1, 0]);
 
   const cardVariants = {
-    hidden: { opacity: 0, y: 100, rotate: -5 },
-    visible: (i: number) => ({
+    hidden: { opacity: 0, y: 30 },
+    visible: { 
       opacity: 1,
       y: 0,
-      rotate: 0,
       transition: {
-        delay: i * 0.1,
-        duration: 0.8,
-        type: "spring",
-        stiffness: 100
+        duration: 0.5
       }
-    })
+    }
   };
 
   return (
@@ -165,8 +161,6 @@ const ServiceSection = ({ service, index }: { service: typeof servicesPage[0]; i
           <div className="flex flex-wrap justify-center gap-3 md:gap-4">
             {service.features.map((feature, idx) => (
               <motion.span
-                key={idx}
-                custom={idx}
                 initial="hidden"
                 whileInView="visible"
                 variants={cardVariants}
