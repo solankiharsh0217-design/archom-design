@@ -72,7 +72,7 @@ const ContattiPage = () => {
                 <span className="text-2xl">📞</span>
                 <div>
                   <h3 className="text-sm font-bold uppercase tracking-wider mb-2 text-white/70">Telefono</h3>
-                  <a href="tel:3453389078" className="text-lg font-bold hover:text-gray-300 text-white">345/3389078</a>
+                  <a href="tel:3453389078" className="text-lg font-bold hover:text-gray-300 text-white">346/5389178</a>
                   <p className="text-sm text-white/50">(anche WhatsApp)</p>
                 </div>
               </div>
@@ -198,10 +198,10 @@ const ContattiPage = () => {
               href="tel:3453389078" 
               className="inline-flex items-center justify-center gap-2 px-8 md:px-12 py-4 md:py-5 bg-black text-white font-bold uppercase tracking-wider text-sm md:text-base rounded-full hover:bg-gray-900 transition-colors"
             >
-              <span>📞</span> 345/3389078
+              <span>📞</span> 346/5389178
             </a>
             <a 
-              href="https://wa.me/393453389078" 
+              href="https://wa.me/393465389178" 
               target="_blank"
               rel="noopener noreferrer"
               className="inline-flex items-center justify-center gap-2 px-8 md:px-12 py-4 md:py-5 bg-green-500 text-white font-bold uppercase tracking-wider text-sm md:text-base rounded-full hover:bg-green-600 transition-colors"

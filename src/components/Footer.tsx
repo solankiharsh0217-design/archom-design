@@ -34,7 +34,7 @@ const Footer = () => {
               <li>Via Lagione 46</li>
               <li>Corso Maggiore 88</li>
               <li className="mt-4">
-                <a href="tel:3453389078" className="hover:text-white transition-colors">345/3389078</a>
+                <a href="tel:3465389178" className="hover:text-white transition-colors">346/5389178</a>
               </li>
               <li>
                 <a href="tel:011350606" className="hover:text-white transition-colors">01 35 06 06</a>

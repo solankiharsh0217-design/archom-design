@@ -36,10 +36,10 @@ const Contact = () => {
         
         <div className="flex flex-col sm:flex-row gap-4 md:gap-6">
           <a 
-            href="tel:3453389078" 
+            href="tel:3465389178" 
             className="inline-flex items-center justify-center gap-2 px-6 md:px-8 py-3 md:py-4 bg-[var(--color-arch-white)] text-[var(--color-arch-black)] font-bold uppercase tracking-wider text-sm md:text-base rounded-full hover:bg-gray-200 transition-colors"
           >
-            <span>📞</span> 345/3389078
+            <span>📞</span> 346/5389178
           </a>
           <a 
             href="mailto:service@sinergie.srl" 

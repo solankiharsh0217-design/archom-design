@@ -10,30 +10,72 @@ const services = [
   },
   {
     id: '02',
+    title: 'Nuove Costruzioni',
+    description: 'Realizziamo nuove costruzioni di ogni dimensione, dalle piccole abitazioni ai grandi progetti. Seguiamo ogni fase del processo costruttivo.',
+    icon: '🏗️'
+  },
+  {
+    id: '03',
     title: 'Impianti Idrico-Sanitari',
     description: 'Installazione, sostituzione e manutenzione di impianti idraulici e sanitari. La nostra specializzazione principale.',
     icon: '🔧'
   },
   {
-    id: '03',
+    id: '04',
     title: 'Installazione Impianti Fotovoltaici',
     description: 'Forniamo e installiamo pannelli fotovoltaici per abitazioni e attività commerciali, riducendo i costi energetici.',
     icon: '☀️'
   },
   {
-    id: '04',
+    id: '05',
     title: 'Manutenzione Caldaie',
-    description: 'Manutenzione ordinaria e straordinaria, revisione e sostituzione caldaie di ogni marca e tipologia.',
+    description: 'Manutenzione ordinaria e straordinaria, revisione e sostituzione di caldeie tradizionali, a pellet e ibride. Redazione di perizie termotecniche.',
     icon: '🔥'
   },
   {
-    id: '05',
+    id: '06',
+    title: 'Rifacimento Tetti e Bonifica',
+    description: 'Ristrutturiamo completamente qualsiasi tipologia di tetto di qualsiasi dimensione. Eseguiamo bonifica da eternit e amianto in totale sicurezza.',
+    icon: '🏠'
+  },
+  {
+    id: '07',
+    title: 'Assistenza Pratiche Comunali e Catastali',
+    description: 'Supporto tecnico per pratiche comunali e catastali, inclusi cambi di destinazione d\'uso. Gestiamo tutta la burocrazia per te.',
+    icon: '📋'
+  },
+  {
+    id: '08',
+    title: 'Noleggio e Installazione Ponteggi',
+    description: 'Noleggio e installazione professionale di ponteggi e parapetti per lavori edili di ogni tipo. Sicurezza garantita.',
+    icon: '🪜'
+  },
+  {
+    id: '09',
+    title: 'Realizzazione Aree Verdi',
+    description: 'Progettazione e realizzazione di aree verdi, giardini e spazi esterni. Installazione di sistemi di irrigazione automatici.',
+    icon: '🌳'
+  },
+  {
+    id: '10',
+    title: 'Lavori di Fabbro',
+    description: 'Creazione di nuove recinzioni, cancelli, cancellini e strutture metalliche su misura. Lavori di precisione e alta qualità.',
+    icon: '⚙️'
+  },
+  {
+    id: '11',
+    title: 'Disotturazioni e Spurghi',
+    description: 'Interventi rapidi per disotturazione e spurgo di tombini, wc, lavandini e condotte. Servizio disponibile anche per emergenze.',
+    icon: '🚿'
+  },
+  {
+    id: '12',
     title: 'Progettazione e Redazione',
     description: 'Supporto alla progettazione per interventi nell\'area metropolitana. Dall\'idea al cantiere, ti seguiamo in ogni fase.',
     icon: '📐'
   },
   {
-    id: '06',
+    id: '13',
     title: 'Manutenzione Generale',
     description: 'Interventi di manutenzione ordinaria su impianti, strutture e finiture per privati e condomini.',
     icon: '🔧'
