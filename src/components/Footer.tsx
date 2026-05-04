@@ -28,17 +28,22 @@ const Footer = () => {
 
           {/* Contact Column */}
           <div className="col-span-1 lg:col-span-1">
-            <h3 className="text-xs md:text-sm font-bold tracking-widest text-[#555] mb-4 md:mb-6 uppercase">Contatti</h3>
+            <h3 className="text-xs md:text-sm font-bold tracking-widest text-[#555] mb-4 md:mb-6 uppercase">Sedi Principali</h3>
             <ul className="space-y-2 md:space-y-3 font-semibold text-gray-300 text-sm md:text-base">
-              <li>Viale Argini — Lagione 48</li>
-              <li>Via Lagione 46</li>
-              <li>Corso Maggiore 88</li>
-              <li className="mt-4">
+              <li>Via Canazza 46 — Legnano MI</li>
+              <li>Viale dei Cerri 89 — Cerro Maggiore MI</li>
+            </ul>
+            <h3 className="text-xs md:text-sm font-bold tracking-widest text-[#555] mb-4 md:mb-6 uppercase mt-6">Telefono</h3>
+            <ul className="space-y-2 md:space-y-3 font-semibold text-gray-300 text-sm md:text-base">
+              <li>
                 <a href="tel:3465389178" className="hover:text-white transition-colors">346/5389178</a>
               </li>
               <li>
-                <a href="tel:011350606" className="hover:text-white transition-colors">01 35 06 06</a>
+                <a href="tel:0331514686" className="hover:text-white transition-colors">0331/514686</a>
               </li>
+            </ul>
+            <h3 className="text-xs md:text-sm font-bold tracking-widest text-[#555] mb-4 md:mb-6 uppercase mt-6">Email</h3>
+            <ul className="space-y-2 md:space-y-3 font-semibold text-gray-300 text-sm md:text-base">
               <li>
                 <a href="mailto:service@sinergie.srl" className="hover:text-white transition-colors">service@sinergie.srl</a>
               </li>
@@ -56,11 +61,20 @@ const Footer = () => {
               <li>Progettazione</li>
             </ul>
           </div>
+
+          {/* Partners Column */}
+          <div className="col-span-1 lg:col-span-1">
+            <h3 className="text-xs md:text-sm font-bold tracking-widest text-[#555] mb-4 md:mb-6 uppercase">Partner</h3>
+            <ul className="space-y-2 md:space-y-3 font-semibold text-gray-300 text-sm md:text-base">
+              <li>Moldil — L'alternativa al Vespaio ventilato</li>
+              <li>VF Partner — Il green del futuro</li>
+            </ul>
+          </div>
         </div>
 
         {/* Bottom Bar */}
         <div className="relative pt-6 md:pt-8 border-t border-[#222] flex flex-col md:flex-row justify-between items-center text-xs font-bold tracking-widest text-[#555]">
-          <p>© 2025 SINERGIE SRL — P.IVA [DA CONFERMARE]</p>
+          <p>© 2025 SINERGIE SRL — P.IVA 12230640158 — Cap. Sociale €70.000</p>
           <Link to="/" className="mt-2 md:mt-0 hover:text-white transition-colors">TORNA SU ↑</Link>
         </div>
 
