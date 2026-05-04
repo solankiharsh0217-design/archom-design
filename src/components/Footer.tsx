@@ -1,11 +1,13 @@
 import { Link } from 'react-router-dom';
+import moldilLogo from '../assets/partners/moldil.png';
+import vfPartnerLogo from '../assets/partners/vf-partner.png';
 
 const Footer = () => {
   return (
     <footer className="w-full bg-[var(--color-arch-black)] text-[var(--color-arch-white)] py-12 md:py-16 lg:py-24 px-6 md:px-8 border-t border-[#222]">
       <div className="max-w-[1920px] mx-auto">
         
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 md:gap-12 lg:gap-16 mb-12 md:mb-16 lg:mb-24">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-8 md:gap-12 lg:gap-16 mb-12 md:mb-16 lg:mb-24">
           {/* Logo Column */}
           <div className="col-span-1 lg:col-span-1">
             <Link to="/" className="text-2xl md:text-3xl lg:text-4xl font-sans font-black tracking-tighter block mb-3 md:mb-4">SINERGIE SRL</Link>
@@ -65,10 +67,10 @@ const Footer = () => {
           {/* Partners Column */}
           <div className="col-span-1 lg:col-span-1">
             <h3 className="text-xs md:text-sm font-bold tracking-widest text-[#555] mb-4 md:mb-6 uppercase">Partner</h3>
-            <ul className="space-y-2 md:space-y-3 font-semibold text-gray-300 text-sm md:text-base">
-              <li>Moldil — L'alternativa al Vespaio ventilato</li>
-              <li>VF Partner — Il green del futuro</li>
-            </ul>
+            <div className="flex flex-col gap-4">
+              <img src={moldilLogo} alt="Moldil" className="h-12 w-auto object-contain invert brightness-0 filter" />
+              <img src={vfPartnerLogo} alt="VF Partner" className="h-12 w-auto object-contain invert brightness-0 filter" />
+            </div>
           </div>
         </div>
 
