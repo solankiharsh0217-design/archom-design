@@ -67,9 +67,9 @@ const Footer = () => {
           {/* Partners Column */}
           <div className="col-span-1 lg:col-span-1">
             <h3 className="text-xs md:text-sm font-bold tracking-widest text-[#555] mb-4 md:mb-6 uppercase">Partner</h3>
-            <div className="flex flex-col gap-4">
-              <img src={moldilLogo} alt="Moldil" className="h-12 w-auto object-contain invert brightness-0 filter" />
-              <img src={vfPartnerLogo} alt="VF Partner" className="h-12 w-auto object-contain invert brightness-0 filter" />
+            <div className="flex flex-col gap-6 items-start">
+              <img src={moldilLogo} alt="Moldil" className="h-10 w-auto object-contain" />
+              <img src={vfPartnerLogo} alt="VF Partner" className="h-10 w-auto object-contain" />
             </div>
           </div>
         </div>
